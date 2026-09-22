@@ -1,0 +1,42 @@
+-- 1. Tạo bảng customers
+DROP TABLE IF EXISTS customers;
+
+CREATE TABLE customers (
+    customerNumber INTEGER PRIMARY KEY AUTOINCREMENT,
+    customerName TEXT,
+    contactLastName TEXT,
+    contactFirstName TEXT,
+    phone TEXT,
+    city TEXT
+);
+
+-- 2. Sinh tự động 10.000 bản ghi dữ liệu mẫu
+WITH RECURSIVE generate_series(x) AS (
+    SELECT 1
+    UNION ALL
+    SELECT x + 1 FROM generate_series WHERE x < 10000
+)
+INSERT INTO customers (customerName, contactLastName, contactFirstName, phone, city)
+SELECT 
+    'Customer ' || x,
+    'LastName ' || (x % 50),
+    'FirstName ' || (x % 100),
+    '090' || x,
+    'City ' || (x % 10)
+FROM generate_series;
+
+-- 3. Thêm bản ghi mục tiêu cần tìm kiếm giống như trong bài thực hành
+INSERT INTO customers (customerName, contactLastName, contactFirstName, phone, city)
+VALUES ('Land of Toys Inc.', 'King', 'Jean', '0912345678', 'NYC');
+
+-- Tạo Index kết hợp
+CREATE INDEX idx_full_name ON customers (contactFirstName, contactLastName);
+
+-- Kiểm tra truy vấn theo cặp
+EXPLAIN QUERY PLAN 
+SELECT * FROM customers 
+WHERE contactFirstName = 'Jean' AND contactLastName = 'King';
+
+-- Xóa Index sau khi thực hành xong
+DROP INDEX idx_customerName;
+DROP INDEX idx_full_name;
