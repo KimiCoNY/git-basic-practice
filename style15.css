@@ -1,0 +1,191 @@
+/* ==========================================================================
+   1. RESET & BASE (ÁP DỤNG CHUNG)
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+  font-size: 16px; /* Chuẩn 1rem = 16px */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. MOBILE LAYOUT (MẶC ĐỊNH CHO MÀN HÌNH < 768PX - 1 CỘT DUY NHẤT)
+   ========================================================================== */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.header p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Footer */
+.footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.875rem;
+  margin-top: auto; /* Đẩy footer xuống chân trang */
+}
+
+/* Lưới nội dung dạng 1 cột */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 1rem;
+  width: 100%;
+}
+
+/* Thẻ Card */
+.card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Khối nội dung trong thẻ */
+.card-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.tag {
+  align-self: flex-start;
+  background-color: #e2e8f0;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* Tối ưu ảnh đáp ứng */
+.card-media img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Phối màu nền gradient phân biệt các card */
+.card-2 { background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+.card-3 { background: linear-gradient(135deg, #f0fdf4, #dcfce7); }
+.card-4 { background: linear-gradient(135deg, #faf5ff, #f3e8ff); }
+.card-5 { background: linear-gradient(135deg, #fff7ed, #ffedd5); }
+.card-6 { background: linear-gradient(135deg, #f0fdfa, #ccfbf1); }
+
+/* ==========================================================================
+   3. TABLET BREAKPOINT (>= 768PX - CHUYỂN SANG LƯỚI 2 CỘT)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .header {
+    padding: 3rem 2rem;
+  }
+
+  .header h1 {
+    font-size: 2.1rem;
+  }
+
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cân xứng */
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+  }
+
+  /* Card tiêu điểm trải rộng 2 cột trên tablet */
+  .card-1 {
+    grid-column: span 2;
+  }
+
+  .card-1 .card-media img {
+    height: 260px;
+  }
+}
+
+/* ==========================================================================
+   4. DESKTOP BREAKPOINT (>= 1024PX - LƯỚI 4 CỘT BẤT ĐỐI XỨNG)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .content-grid {
+    grid-template-columns: repeat(4, 1fr); /* Khôi phục lưới 4 cột */
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+    max-width: 1200px;                    /* Giới hạn độ rộng không để tràn màn lớn */
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+    gap: 1.5rem;
+  }
+
+  /* Sắp xếp bất đối xứng phong cách Tạp chí / Bento Grid */
+  .card-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .card-1 .card-media img {
+    height: 100%; /* Lấp đầy toàn bộ chiều cao của khối 2x2 */
+  }
+
+  .card-2 {
+    grid-column: span 2;
+  }
+
+  .card-4 {
+    grid-row: span 2;
+  }
+}

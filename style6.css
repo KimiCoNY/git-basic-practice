@@ -1,0 +1,71 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  margin: 0;
+  padding: 20px;
+}
+
+/* ==========================================================================
+   2. ĐỊNH DẠNG KHUNG BẢNG BIỂU
+   ========================================================================== */
+table {
+  width: 85%;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-collapse: collapse; /* Khử viền đôi mặc định */
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;          /* Giữ bo góc cho các hàng đầu và cuối */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+              0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ==========================================================================
+   3. HÀNG TIÊU ĐỀ (THEAD)
+   ========================================================================== */
+thead th {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+}
+
+/* Tiêu đề dòng đầu tiên của cột thời gian trong tbody */
+tbody th {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. HIỆU ỨNG NGỰA VẰN (ZEBRA STRIPING) & TƯƠNG TÁC HOVER
+   ========================================================================== */
+/* Tô màu cho các hàng chẵn trong phần thân bảng */
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Làm nổi bật dòng đang trỏ chuột tới */
+tbody tr:hover {
+  background-color: #e2e8f0;
+  transition: background-color 0.15s ease-in-out;
+}

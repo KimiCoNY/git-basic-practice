@@ -1,0 +1,47 @@
+/* ==========================================================================
+   1. BOX-SIZING RESET THEO CHUẨN BEST PRACTICE
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ==========================================================================
+   2. THIẾT LẬP KÍCH THƯỚC CHUNG
+   ========================================================================== */
+.box {
+  width: 250px;
+  height: 150px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   3. HỘP 1: SHORTHAND 4 GIÁ TRỊ & VIỀN ĐƠN CẠNH
+   ========================================================================== */
+.box-1 {
+  background-color: lightskyblue;
+  /* Viết tắt theo thứ tự: Trên(10px) - Phải(20px) - Dưới(30px) - Trái(40px) */
+  padding: 10px 20px 30px 40px;
+  
+  /* Chỉ định đường viền trang trí riêng cho cạnh trái */
+  border-left: 8px dotted red;
+}
+
+/* ==========================================================================
+   4. HỘP 2: SHORTHAND 2 GIÁ TRỊ & MARGIN ĐỊNH VỊ
+   ========================================================================== */
+.box-2 {
+  background-color: lightsalmon;
+  
+  /* Đẩy lề ngoài để căn vị trí hộp */
+  margin-top: 60px;
+  margin-left: 100px;
+  
+  /* Viết tắt: Trên/Dưới(25px) - Trái/Phải(50px) */
+  padding: 25px 50px;
+}

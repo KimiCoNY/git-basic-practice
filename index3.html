@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thực Hành UI/UX - Trang Đăng Ký Người Dùng</title>
+  <style>
+    /* -------------------------------------------------------------
+       1. CHỦ ĐỀ & BIẾN GIAO DIỆN (CSS Variables)
+       ------------------------------------------------------------- */
+    :root {
+      --primary-color: #4f46e5;
+      --primary-hover: #4338ca;
+      --bg-color: #f3f4f6;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --border-color: #d1d5db;
+      --error-color: #ef4444;
+      --success-color: #10b981;
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* -------------------------------------------------------------
+       2. BỐ CỤC CARD & RESPONSIVE (UI/UX Layout)
+       ------------------------------------------------------------- */
+    .auth-card {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: 440px;
+      padding: 32px 28px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* -------------------------------------------------------------
+       3. FORM ELEMENTS & INPUTS
+       ------------------------------------------------------------- */
+    .form-group {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .required {
+      color: var(--error-color);
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem; /* >= 16px tránh iOS tự động zoom */
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+
+    /* Icon Ẩn/Hiện Mật khẩu */
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Thông báo lỗi bên dưới input */
+    .error-text {
+      color: var(--error-color);
+      font-size: 0.775rem;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .form-group.error input {
+      border-color: var(--error-color);
+    }
+
+    .form-group.error .error-text {
+      display: block;
+    }
+
+    /* Thanh đo độ mạnh mật khẩu */
+    .strength-meter {
+      height: 4px;
+      background: #e5e7eb;
+      margin-top: 6px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .strength-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s, background-color 0.3s;
+    }
+
+    /* Checkbox Điều khoản */
+    .terms-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .terms-group input {
+      margin-top: 3px;
+      cursor: pointer;
+    }
+
+    /* -------------------------------------------------------------
+       4. ÁP DỤNG FITTS' LAW FOR BUTTONS (CTA Targets)
+       ------------------------------------------------------------- */
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      min-height: 48px; /* Tối ưu Touch Target cho di động */
+    }
+
+    .btn-submit:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.99);
+    }
+
+    .footer-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .footer-link a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* -------------------------------------------------------------
+       5. TRANG 2: XÁC NHẬN THÀNH CÔNG (Success Screen)
+       ------------------------------------------------------------- */
+    .success-container {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background-color: #d1fae5;
+      color: var(--success-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 16px auto;
+    }
+
+    .success-container p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .email-highlight {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-card">
+    
+    <!-- ==================== TRANG 1: FORM ĐĂNG KÝ ==================== -->
+    <div id="page-register">
+      <div class="header">
+        <h2>Tạo tài khoản mới</h2>
+        <p>Tham gia cùng chúng tôi chỉ trong vài bước đơn giản</p>
+      </div>
+
+      <form id="signupForm" novalidate>
+        <!-- Họ và tên -->
+        <div class="form-group" id="group-fullname">
+          <label for="fullname">Họ và tên <span class="required">*</span></label>
+          <input type="text" id="fullname" placeholder="Ví dụ: Nguyễn Văn A">
+          <span class="error-text">Vui lòng nhập họ và tên của bạn.</span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group" id="group-email">
+          <label for="email">Địa chỉ Email <span class="required">*</span></label>
+          <input type="email" id="email" placeholder="name@example.com">

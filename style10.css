@@ -1,0 +1,63 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+}
+
+/* Kiểu dáng trực quan cho từng vùng */
+.header, .main, .sidebar, .footer {
+  background-color: #f0f8ff;
+  border: 2px dashed #93c5fd;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   2. THIẾT LẬP LƯỚI GRID CONTAINER
+   ========================================================================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;   /* Tỉ lệ cột: Main chiếm 2/3, Sidebar chiếm 1/3 */
+  grid-template-rows: auto 1fr auto; /* Header, Footer auto; Nội dung giữa giãn hết mức */
+  gap: 20px;                         /* Khoảng cách đều nhau giữa các ô */
+  min-height: 100vh;                 /* Chiếm tối thiểu 100% chiều cao màn hình */
+  padding: 20px;
+}
+
+/* ==========================================================================
+   3. ĐỊNH VỊ VỊ TRÍ CÁC PHẦN TỬ (GRID ITEMS)
+   ========================================================================== */
+
+/* Header trải dài từ vạch 1 đến vạch cuối cùng */
+.header {
+  grid-column: 1 / -1; /* -1 tương đương với đường line cuối cùng bên phải */
+}
+
+/* Main chiếm cột 1 hàng giữa */
+.main {
+  grid-column: 1 / 2;
+  text-align: left;
+}
+
+/* Sidebar chiếm cột 2 hàng giữa */
+.sidebar {
+  grid-column: 2 / 3;
+  text-align: left;
+}
+
+/* Footer trải dài toàn bộ chiều ngang như Header */
+.footer {
+  grid-column: 1 / -1;
+}

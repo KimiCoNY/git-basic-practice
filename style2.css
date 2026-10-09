@@ -1,0 +1,151 @@
+/* ==========================================================================
+   1. THIẾT LẬP CHUNG & BASE STYLES
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  background-color: #f1f5f9; /* Màu nền xám xanh trung tính, dịu mắt */
+  color: #334155;           /* Màu chữ xám chì đậm dễ đọc */
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   2. BỐ CỤC KHUNG CHỨA CHÍNH (CONTAINER)
+   ========================================================================== */
+
+.container {
+  max-width: 900px;
+  width: 90%;
+  margin: 40px auto;        /* Tự động căn giữa khung trang web */
+  background-color: #ffffff; /* Nền trắng dạng Card nổi bật */
+  padding: 45px 50px;
+  border-radius: 12px;      /* Bo góc mềm mại */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.01); /* Hiệu ứng nổi */
+}
+
+/* ==========================================================================
+   3. KHU VỰC ĐẦU TRANG (HEADER & AVATAR)
+   ========================================================================== */
+
+header {
+  text-align: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 30px;
+}
+
+/* Biến ảnh đại diện thành hình tròn hoàn hảo */
+header img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;       /* Cắt góc 50% tạo hình tròn */
+  object-fit: cover;        /* Giữ nguyên tỉ lệ ảnh không bị méo */
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #0f172a;           /* Xanh đen đậm tạo điểm nhấn danh tính */
+  margin: 10px 0 5px 0;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. CÁC PHÂN VÙNG NỘI DUNG (SECTIONS & TYPOGRAPHY)
+   ========================================================================== */
+
+section {
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-size: 1.45rem;
+  color: #1e3a8a;           /* Xanh đậm quý phái */
+  border-bottom: 2.5px solid #3b82f6; /* Vạch gạch chân trang trí hiện đại */
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  display: inline-block;    /* Đường kẻ ôm sát chiều rộng tiêu đề */
+}
+
+p {
+  margin: 0 0 14px 0;
+  font-size: 1.05rem;
+}
+
+/* Làm nổi bật các từ quan trọng */
+strong {
+  color: #2563eb;           /* Tông xanh nhấn mạnh */
+  font-weight: 600;
+}
+
+em {
+  color: #475569;
+  font-style: italic;
+}
+
+/* Danh sách sở thích / kỹ năng */
+section ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+section ul li {
+  margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   5. KHU VỰC LIÊN KẾT & HIỆU ỨNG TƯƠNG TÁC
+   ========================================================================== */
+
+/* Bỏ dấu chấm đầu dòng và căn lề cho danh sách liên hệ */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+  display: flex;            /* Dàn hàng ngang các nút liên kết */
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: #eff6ff;
+  color: #1d4ed8;           /* Màu chữ xanh dương */
+  text-decoration: none;    /* Bỏ gạch chân mặc định */
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid #bfdbfe;
+  transition: all 0.25s ease; /* Tạo chuyển động mượt mà */
+}
+
+/* Hiệu ứng tương tác khi rê chuột */
+nav ul li a:hover {
+  background-color: #2563eb;
+  color: #ffffff;           /* Đổi chữ sang trắng */
+  border-color: #2563eb;
+  transform: translateY(-2px); /* Nhẹ nhàng nổi lên trên */
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+/* ==========================================================================
+   6. CHÂN TRANG (FOOTER)
+   ========================================================================== */
+
+footer {
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 25px;
+  margin-top: 40px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}

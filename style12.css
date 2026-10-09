@@ -1,0 +1,155 @@
+/* ==========================================================================
+   1. RESET & BEST PRACTICES
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   2. MACRO-LAYOUT: BỐ CỤC TOÀN TRANG (.page-container)
+   ========================================================================== */
+.page-container {
+  display: grid;
+  grid-template-columns: 100%;       /* 1 cột chính trải dài toàn trang */
+  grid-template-rows: auto 1fr auto; /* Header (auto), Content (giãn tối đa), Footer (auto) */
+  min-height: 100vh;                 /* Sticky footer: Giữ footer luôn ở chân trang */
+}
+
+/* Header trải dài toàn bộ chiều rộng */
+.header {
+  grid-column: 1 / -1;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 3px solid #e2e8f0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+
+.header p {
+  margin: 6px 0 0 0;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Footer dính cuối trang */
+.footer {
+  grid-column: 1 / -1;
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid #334155;
+}
+
+/* ==========================================================================
+   3. MICRO-LAYOUT: LƯỚI NỘI DUNG LỒNG NHAU (.content-grid)
+   ========================================================================== */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Tạo lưới 4 cột bằng nhau */
+  grid-auto-rows: 200px;                 /* Chiều cao chuẩn mỗi khối */
+  grid-auto-flow: dense;                 /* Tự động lấp các ô trống thị giác */
+  gap: 20px;                             /* Rãnh khoảng cách giữa các card */
+  max-width: 1200px;
+  width: 92%;
+  margin: 40px auto;                     /* Căn giữa vùng nội dung chính */
+}
+
+/* ==========================================================================
+   4. THIẾT KẾ CÁC THẺ BÀI BÁO (.card)
+   ========================================================================== */
+.card {
+  padding: 24px;
+  border-radius: 12px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;            /* Đẩy tiêu đề bài viết xuống đáy thẻ */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.2);
+}
+
+.card h2, .card h3 {
+  margin: 8px 0 0 0;
+  line-height: 1.3;
+}
+
+.card .tag {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: auto;                  /* Đẩy tag lên góc trên cùng */
+}
+
+/* ==========================================================================
+   5. SẮP XẾP BẤT ĐỐI XỨNG (ASYMMETRICAL MOSAIC)
+   ========================================================================== */
+
+/* Card 1: Khối tin bài chính chiếm diện tích lớn 2x2 */
+.card-1 {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.card-1 h2 {
+  font-size: 1.8rem;
+}
+
+/* Card 2: Khối trải rộng ngang 2 cột */
+.card-2 {
+  background: linear-gradient(135deg, #065f46, #10b981);
+  grid-column: span 2;
+}
+
+/* Card 3: Khối đơn 1x1 */
+.card-3 {
+  background: linear-gradient(135deg, #7c2d12, #ea580c);
+}
+
+/* Card 4: Khối phóng sự kéo dài dọc 2 hàng */
+.card-4 {
+  background: linear-gradient(135deg, #581c87, #a855f7);
+  grid-row: span 2;
+}
+
+/* Card 5: Khối đơn 1x1 */
+.card-5 {
+  background: linear-gradient(135deg, #831843, #ec4899);
+}
+
+/* Card 6: Khối đơn 1x1 */
+.card-6 {
+  background: linear-gradient(135deg, #134e4a, #14b8a6);
+}

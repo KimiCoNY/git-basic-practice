@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Cá Nhân - Responsive Mobile to Desktop</title>
+  <link rel="stylesheet" href="style15.css">
+</head>
+<body class="page-container">
+
+  <!-- Header -->
+  <header class="header">
+    <h1>HỒ SƠ NĂNG LỰC</h1>
+    <p>Tuyển tập các dự án công nghệ & giao diện web</p>
+  </header>
+
+  <!-- Lưới dự án Responsive -->
+  <main class="content-grid">
+    <!-- Dự án 1: Áp dụng Art Direction bằng thẻ <picture> -->
+    <article class="card card-1">
+      <picture class="card-media">
+        <!-- Ảnh ngang cho Desktop/Tablet rộng từ 768px trở lên -->
+        <source media="(min-width: 768px)" srcset="https://picsum.photos/id/180/800/450">
+        <!-- Ảnh vuông/dọc tối ưu cho màn hình điện thoại hẹp -->
+        <img src="https://picsum.photos/id/180/400/400" alt="Không gian làm việc lập trình với laptop">
+      </picture>
+      <div class="card-info">
+        <span class="tag">Tiêu điểm</span>
+        <h2>Dự án 1: Hệ thống Quản trị Doanh nghiệp</h2>
+      </div>
+    </article>
+
+    <article class="card card-2">
+      <div class="card-info">
+        <span class="tag">Web App</span>
+        <h3>Dự án 2: Ứng dụng Quản lý Tiện ích & Hóa đơn</h3>
+      </div>
+    </article>
+
+    <article class="card card-3">
+      <div class="card-info">
+        <span class="tag">UI/UX</span>
+        <h3>Dự án 3: Thiết kế Giao diện Zalo Mini App</h3>
+      </div>
+    </article>
+
+    <article class="card card-4">
+      <div class="card-info">
+        <span class="tag">Embedded</span>
+        <h3>Dự án 4: Robot Dò Đường Tự Hành</h3>
+      </div>
+    </article>
+
+    <article class="card card-5">
+      <div class="card-info">
+        <span class="tag">Database</span>
+        <h3>Dự án 5: Tối ưu Lược đồ Cơ sở dữ liệu</h3>
+      </div>
+    </article>
+
+    <article class="card card-6">
+      <div class="card-info">
+        <span class="tag">DevOps</span>
+        <h3>Dự án 6: Triển khai Nginx & Docker Compose</h3>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Bản quyền thuộc về tác giả. Thiết kế chuẩn Responsive Mobile-First.</p>
+  </footer>
+
+</body>
+</html>

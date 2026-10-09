@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ với chúng tôi</title>
+</head>
+<body>
+
+  <h1>Liên hệ với chúng tôi</h1>
+  <p>Chúng tôi rất mong nhận được phản hồi từ bạn!</p>
+
+  <form action="#" method="post">
+    <!-- Trường 1: Họ và tên -->
+    <div>
+      <label for="ho_ten">Họ và tên:</label><br>
+      <input 
+        type="text" 
+        id="ho_ten" 
+        name="ho_ten" 
+        placeholder="Ví dụ: Nguyễn Văn A" 
+        required
+      >
+    </div>
+    <br>
+
+    <!-- Trường 2: Email -->
+    <div>
+      <label for="email">Email của bạn:</label><br>
+      <input 
+        type="email" 
+        id="email" 
+        name="email_nguoi_dung" 
+        placeholder="name@example.com" 
+        required
+      >
+    </div>
+    <br>
+
+    <!-- Thử thách thêm: Nhóm Radio Buttons chọn chủ đề -->
+    <!-- Dùng thẻ <fieldset> và <legend> để nhóm các lựa chọn theo chuẩn Semantic -->
+    <fieldset>
+      <legend>Chủ đề liên hệ:</legend>
+
+      <div>
+        <input 
+          type="radio" 
+          id="chu_de_ky_thuat" 
+          name="chu_de" 
+          value="ky_thuat" 
+          checked
+        >
+        <label for="chu_de_ky_thuat">Hỗ trợ kỹ thuật</label>
+      </div>
+
+      <div>
+        <input 
+          type="radio" 
+          id="chu_de_gop_y" 
+          name="chu_de" 
+          value="gop_y"
+        >
+        <label for="chu_de_gop_y">Góp ý sản phẩm</label>
+      </div>
+
+      <div>
+        <input 
+          type="radio" 
+          id="chu_de_khac" 
+          name="chu_de" 
+          value="khac"
+        >
+        <label for="chu_de_khac">Khác</label>
+      </div>
+    </fieldset>
+    <br>
+
+    <!-- Trường 3: Nội dung lời nhắn -->
+    <div>
+      <label for="loi_nhan">Lời nhắn:</label><br>
+      <textarea 
+        id="loi_nhan" 
+        name="loi_nhan" 
+        rows="5" 
+        cols="40" 
+        placeholder="Nhập nội dung chi tiết tại đây..." 
+        required
+      ></textarea>
+    </div>
+    <br>
+
+    <!-- Nút gửi form -->
+    <div>
+      <button type="submit">Gửi lời nhắn</button>
+    </div>
+  </form>
+
+</body>
+</html>

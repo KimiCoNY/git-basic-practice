@@ -1,0 +1,84 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 30px;
+  background-color: #18181b; /* Nền tối phong cách hiện đại */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ==========================================================================
+   2. KHỞI TẠO LƯỚI GRID 4 CỘT
+   ========================================================================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cột tỉ lệ 1fr đều nhau */
+  grid-auto-rows: 130px;                 /* Chiều cao chuẩn mỗi ô hàng */
+  gap: 14px;                             /* Khoảng cách rãnh giữa các mảnh ghép */
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Kiểu dáng chung cho các mảnh ghép */
+.item {
+  padding: 20px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;                   /* Căn giữa chữ theo chiều dọc */
+  justify-content: center;                /* Căn giữa chữ theo chiều ngang */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   3. PHÂN BỔ BẤT ĐỐI XỨNG BẰNG SPAN
+   ========================================================================== */
+
+/* Item 1: Ô nổi bật chiếm trọn 2 cột x 2 hàng */
+.item-1 {
+  background-color: #e11d48;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.item-2 {
+  background-color: #2563eb;
+}
+
+/* Item 3: Dãn ngang 2 cột */
+.item-3 {
+  background-color: #16a34a;
+  grid-column: span 2;
+}
+
+/* Item 4: Kéo dài chiều dọc 2 hàng */
+.item-4 {
+  background-color: #ea580c;
+  grid-row: span 2;
+}
+
+.item-5 {
+  background-color: #9333ea;
+}
+
+.item-6 {
+  background-color: #0d9488;
+}

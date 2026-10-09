@@ -1,0 +1,85 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f4f6; /* Nền xám nhạt làm nền cho thẻ nổi lên */
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   2. KHUNG THẺ SẢN PHẨM (.product-card)
+   ========================================================================== */
+.product-card {
+  width: 320px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 60px auto; /* Tự động căn giữa màn hình */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 
+              0 2px 4px -2px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hiệu ứng nổi nhẹ khi rê chuột vào toàn bộ thẻ */
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   3. CÁC PHẦN TỬ BÊN TRONG THẺ
+   ========================================================================== */
+
+/* Hình ảnh sản phẩm */
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block; /* Tránh khoảng hở inline mặc định ở đáy ảnh */
+}
+
+/* Tên sản phẩm */
+.product-card h3 {
+  font-size: 1.15rem;
+  color: #1f2937;
+  margin: 16px 0 8px 0; /* Cách ảnh 16px, cách giá tiền 8px */
+}
+
+/* Giá sản phẩm */
+.product-card .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e11d48; /* Màu đỏ nổi bật kích thích chuyển đổi */
+  margin: 0 0 20px 0; /* Đẩy nút bấm bên dưới ra 20px */
+}
+
+/* Nút bấm mua hàng */
+.product-card .btn {
+  display: block; /* Biến thẻ inline <a> thành block để chiếm đủ 100% chiều rộng */
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+/* Hiệu ứng tương tác cho nút */
+.product-card .btn:hover {
+  background-color: #1d4ed8; /* Sậm màu lại khi di chuột */
+}

@@ -1,0 +1,109 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+.content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. THANH MENU CHÍNH (.main-nav)
+   ========================================================================== */
+.main-nav {
+  background-color: #1e293b; /* Màu xanh đen hiện đại */
+}
+
+.main-nav .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 40px;
+}
+
+/* Dàn các mục menu cấp 1 nằm trên hàng ngang */
+.main-nav .nav-list > li {
+  display: inline-block;
+  margin-right: -4px; /* Khử khe hở mặc định giữa các phần tử inline-block */
+}
+
+.main-nav .nav-list > li > a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 16px 22px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+/* Hiệu ứng hover cho menu cấp 1 */
+.main-nav .nav-list > li:hover > a {
+  background-color: #334155;
+}
+
+/* ==========================================================================
+   3. LOGIC ĐỊNH VỊ CHA - CON & ẨN/HIỆN MENU CON
+   ========================================================================== */
+
+/* BƯỚC THEN CHỐT: Khối cha làm hệ quy chiếu tọa độ */
+.has-dropdown {
+  position: relative;
+}
+
+/* Menu con: Nhấc khỏi dòng chảy tài liệu và ẩn mặc định */
+.dropdown {
+  position: absolute;
+  top: 100%;                  /* Xuất hiện ngay sát mép dưới thẻ li cha */
+  left: 0;
+  display: none;              /* Ẩn menu khi vừa tải trang */
+  min-width: 200px;           /* Đảm bảo bề rộng cố định không bị co ngắn */
+  background-color: #ffffff;  /* Nền trắng tương phản với menu chính */
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  border-radius: 0 0 8px 8px; /* Bo tròn góc đáy */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 100;               /* Luôn nổi trên nội dung trang web */
+}
+
+/* KÍCH HOẠT HIỂN THỊ: Khi rê chuột vào li cha thì hiện ul con */
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* ==========================================================================
+   4. ĐỊNH DẠNG CÁC MỤC BÊN TRONG MENU CON
+   ========================================================================== */
+.dropdown li {
+  display: block; /* Trả về dạng khối để các mục xếp chồng theo chiều dọc */
+}
+
+.dropdown li a {
+  display: block;
+  color: #1e293b;
+  text-decoration: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background-color: #f1f5f9;
+  color: #2563eb; /* Đổi màu xanh dương nhấn mạnh */
+}

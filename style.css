@@ -1,1 +1,78 @@
-body { margin: 0; }
+/* --- 1. Phong cách chung (Reset & Base) --- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa; /* Màu nền trang nhẹ dịu mắt */
+  color: #333333;           /* Màu chữ xám đen chuẩn công thái học */
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 2. Vùng chứa công thức (Card Layout) --- */
+#recipe-card {
+  width: 800px;
+  max-width: 90%;          /* Đảm bảo co giãn tốt trên màn hình nhỏ */
+  margin: 40px auto;       /* Căn giữa trang theo trục ngang */
+  background-color: #ffffff;
+  padding: 35px;
+  border-radius: 8px;      /* Bo nhẹ 4 góc tạo cảm giác hiện đại */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ tách biệt với nền */
+}
+
+/* --- 3. Kiểu chữ & Tiêu đề (Typography) --- */
+h1, h2 {
+  font-family: "Georgia", serif;
+  color: #c0392b;          /* Đỏ trầm tạo cảm giác ấm cúng, ngon miệng */
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  border-bottom: 2px solid #f1c40f; /* Viền kẻ chân trang trí */
+  padding-bottom: 6px;
+  margin-top: 30px;
+}
+
+/* Căn chỉnh ảnh món ăn ở trung tâm */
+#recipe-card header img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- 4. Bảng biểu nguyên liệu --- */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Gộp đường viền liền mạch */
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+}
+
+/* --- 5. Danh sách & Lớp tiện ích --- */
+ol li {
+  margin-bottom: 10px;    /* Tách khoảng cách giữa các bước nấu ăn */
+  padding-left: 5px;
+}
+
+.highlight {
+  color: #d35400;         /* Màu cam nhấn mạnh */
+  font-weight: bold;
+}

@@ -1,0 +1,56 @@
+/* ==========================================================================
+   1. RESET & CĂN GIỮA MÀN HÌNH
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  place-items: center; /* Căn giữa phần tử theo cả 2 trục ngang và dọc */
+  height: 100vh;
+  margin: 0;
+  background-color: #f1f5f9;
+}
+
+/* ==========================================================================
+   2. TRẠNG THÁI MẶC ĐỊNH CỦA NÚT BẤM (.btn)
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  background-color: #2563eb;       /* Xanh dương hiện đại */
+  color: #ffffff;
+  padding: 14px 32px;
+  text-decoration: none;           /* Xóa bỏ đường gạch chân của thẻ <a> */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+  
+  /* Cấu hình hiệu ứng chuyển tiếp mượt mà cho nhiều thuộc tính */
+  transition: background-color 0.25s ease, 
+              transform 0.25s ease, 
+              box-shadow 0.25s ease;
+}
+
+/* ==========================================================================
+   3. TRẠNG THÁI KHI DI CHUỘT QUA (.btn:hover)
+   ========================================================================== */
+.btn:hover {
+  background-color: #1d4ed8;       /* Sậm màu hơn khi tương tác */
+  transform: translateY(-3px);     /* Nhấc nút nổi lên 3px */
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.35); /* Tăng độ sâu bóng */
+}
+
+/* ==========================================================================
+   4. TRẠNG THÁI KHI NHẤN CHUỘT (.btn:active) - Tùy chọn nâng cao
+   ========================================================================== */
+.btn:active {
+  transform: translateY(-1px);     /* Nhẹ nhàng lún xuống khi bấm giữ */
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Hamburger Navigation</title>
+  <link rel="stylesheet" href="style14.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <a href="#" class="logo">MyBrand</a>
+
+    <!-- Checkbox vô hình đóng vai trò công tắc chuyển đổi trạng thái -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    
+    <!-- Icon Hamburger kích hoạt checkbox qua for="menu-toggle" -->
+    <label for="menu-toggle" class="hamburger-menu" aria-label="Mở menu điều hướng">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </label>
+
+    <!-- Khối liên kết menu chính -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Nội dung trang để kiểm tra menu che phủ -->
+  <main class="content">
+    <h1>Khám Phá Sức Mạnh Mobile-First Navigation</h1>
+    <p>Thu nhỏ cửa sổ trình duyệt xuống dưới 768px để trải nghiệm hiệu ứng menu Hamburger thuần CSS.</p>
+  </main>
+
+</body>
+</html>

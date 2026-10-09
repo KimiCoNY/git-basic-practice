@@ -1,0 +1,99 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Định dạng trực quan cho các khối để dễ quan sát */
+.page-container > * {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================================================
+   2. BỐ CỤC CHO MÀN HÌNH LỚN (DESKTOP LAYOUT > 800PX)
+   ========================================================================== */
+.page-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Chia 4 cột đều nhau */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header và Footer chiếm trọn bề ngang */
+.header, 
+.footer {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.header {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1.5px;
+}
+
+.header p {
+  margin: 5px 0 0 0;
+  color: #94a3b8;
+}
+
+/* Bài viết chính chiếm 3 cột bên trái */
+.main-article {
+  grid-column: 1 / 4;
+  min-height: 350px;
+}
+
+/* Hai bài viết phụ nằm ở cột thứ 4 bên phải */
+.side-article-1, 
+.side-article-2 {
+  grid-column: 4 / 5;
+}
+
+/* ==========================================================================
+   3. MEDIA QUERY CHO MÀN HÌNH NHỎ (<= 800PX)
+   ========================================================================== */
+@media (max-width: 800px) {
+  .page-container {
+    /* Đưa toàn bộ hệ thống lưới về 1 cột duy nhất */
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  /* Reset toàn bộ tọa độ cột để các khối tự động xếp chồng theo thứ tự HTML */
+  .header,
+  .footer,
+  .main-article,
+  .side-article-1,
+  .side-article-2 {
+    grid-column: auto;
+  }
+
+  .main-article {
+    min-height: auto; /* Bỏ chiều cao tối thiểu để vừa khít nội dung trên điện thoại */
+  }
+}

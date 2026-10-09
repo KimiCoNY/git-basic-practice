@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Điều Hướng Dropdown</title>
+  <link rel="stylesheet" href="style8.css">
+</head>
+<body>
+
+  <!-- Thanh điều hướng chính -->
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="#">Trang chủ</a></li>
+      <li><a href="#">Giới thiệu</a></li>
+      
+      <!-- Mục cha chứa menu con (Dropdown) -->
+      <li class="has-dropdown">
+        <a href="#">Sản phẩm ▾</a>
+        <ul class="dropdown">
+          <li><a href="#">Sản phẩm loại A</a></li>
+          <li><a href="#">Sản phẩm loại B</a></li>
+          <li><a href="#">Sản phẩm khác</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Nội dung giả định để kiểm tra độ che phủ của dropdown menu -->
+  <div class="content">
+    <h1>Chào mừng đến với Website</h1>
+    <p>Di chuột vào mục "Sản phẩm ▾" trên thanh menu để kiểm tra menu con đổ xuống.</p>
+  </div>
+
+</body>
+</html>

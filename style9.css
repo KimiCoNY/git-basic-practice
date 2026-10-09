@@ -1,0 +1,93 @@
+/* ==========================================================================
+   1. RESET & THIẾT LẬP NỀN TẢNG
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f1f5f9; /* Màu nền xám sáng dịu mắt */
+  color: #1e293b;
+  margin: 0;
+  padding: 30px 20px 60px 20px;
+}
+
+/* Tiêu đề đầu trang */
+.gallery-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.gallery-header h1 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.gallery-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ==========================================================================
+   2. CONTAINER THƯ VIỆN ẢNH (FLEX CONTAINER)
+   ========================================================================== */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;          /* Cho phép các ảnh tự động rớt dòng khi hết chỗ */
+  justify-content: center;   /* Căn giữa các ảnh trên từng hàng */
+  gap: 20px;                 /* Tạo khoảng cách đều đặn 20px giữa các ảnh */
+  max-width: 1200px;         /* Giới hạn độ rộng tối đa trên màn hình lớn */
+  margin: 0 auto;            /* Căn giữa toàn bộ thư viện */
+}
+
+/* ==========================================================================
+   3. ITEM ẢNH (FLEX ITEM)
+   ========================================================================== */
+.gallery-item {
+  /* Công thức tự động Responsive:
+     flex-grow: 1     -> Co giãn lấp đầy khoảng trống còn thừa của hàng
+     flex-shrink: 1   -> Co nhỏ lại khi hiển thị trên màn hình hẹp
+     flex-basis: 300px -> Cố gắng giữ kích thước cơ sở là 300px trước khi xuống dòng
+  */
+  flex: 1 1 300px;
+  max-width: 450px;          /* Tránh việc hàng chỉ còn 1 ảnh bị kéo dãn quá to */
+  border-radius: 12px;       /* Bo góc mềm mại */
+  overflow: hidden;          /* Ẩn phần góc ảnh vuông chòi ra ngoài */
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 
+              0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Hiệu ứng chuyển động */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hiệu ứng tương tác khi rê chuột vào khung ảnh */
+.gallery-item:hover {
+  transform: translateY(-5px) scale(1.02); /* Nhấc nhẹ lên và phóng to 2% */
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.15), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   4. ĐỊNH DẠNG HÌNH ẢNH CHI TIẾT
+   ========================================================================== */
+.gallery-item img {
+  width: 100%;
+  height: 240px;             /* Cố định chiều cao để các khung ảnh thẳng hàng tăm tắp */
+  object-fit: cover;         /* Cắt cúp ảnh tự động vừa vặn, không bị méo tỉ lệ */
+  display: block;            /* Loại bỏ khoảng hở inline mặc định dưới chân ảnh */
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+  opacity: 0.95;             /* Giảm độ sáng nhẹ khi tương tác */
+}
