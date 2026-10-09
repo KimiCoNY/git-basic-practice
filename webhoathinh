@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoạt Hình Vietsub - Trang Xem Phim Hoạt Hình Trực Tuyến</title>
+    <!-- Liên kết file CSS bên ngoài -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER CỐ ĐỊNH (FIXED HEADER) -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="#">
+                <!-- Bạn có thể thay src bằng logo ảnh của bạn -->
+                <img src="https://via.placeholder.com/150x40?text=ANIME+KIDS" alt="Logo Anime Kids">
+            </a>
+        </div>
+        
+        <!-- Thanh công cụ tìm kiếm và lọc (Mô tả đề bài) -->
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm phim hoạt hình...">
+            <select>
+                <option value="newest">Mới cập nhật</option>
+                <option value="views">Nhiều lượt xem nhất</option>
+            </select>
+        </div>
+
+        <!-- Head-link chứa các liên kết trang -->
+        <nav class="head-link">
+            <ul>
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#">Thể loại</a></li>
+                <li><a href="#">Phim thuyết minh</a></li>
+                <li><a href="#">Yêu thích</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. TRỰC QUAN KHU VỰC NỘI DUNG CHÍNH (CONTENT AREA) -->
+    <div class="page-container">
+        
+        <!-- LEFT CONTENT: MENU DẠNG DANH SÁCH VIDEO CÓ SẴN -->
+        <aside class="left-content">
+            <h3>Danh sách video</h3>
+            <ul class="video-menu">
+                <li class="active">
+                    <a href="#video-1">
+                        <img src="https://via.placeholder.com/80x45?text=Episode+1" alt="Tập 1">
+                        <div class="video-info">
+                            <span>Tập 1: Cuộc phiêu lưu bắt đầu</span>
+                            <small>FullHD 1080p • Thuyết minh</small>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#video-2">
+                        <img src="https://via.placeholder.com/80x45?text=Episode+2" alt="Tập 2">
+                        <div class="video-info">
+                            <span>Tập 2: BÍ mật khu rừng phép thuật</span>
+                            <small>FullHD 1080p • Thuyết minh</small>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#video-3">
+                        <img src="https://via.placeholder.com/80x45?text=Episode+3" alt="Tập 3">
+                        <div class="video-info">
+                            <span>Tập 3: Vùng đất rồng thiêng</span>
+                            <small>HD 720p • Thuyết minh</small>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#video-4">
+                        <img src="https://via.placeholder.com/80x45?text=Episode+4" alt="Tập 4">
+                        <div class="video-info">
+                            <span>Tập 4: Tình bạn bền chặt</span>
+                            <small>FullHD 1080p • Thuyết minh</small>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- RIGHT CONTENT: KHU VỰC XEM VIDEO (PLAYER AREA) -->
+        <main class="right-content">
+            <!-- Khối Player 1: Dùng thẻ HTML5 <video> -->
+            <div class="player-wrapper">
+                <h2>Tập 1: Cuộc phiêu lưu bắt đầu (Thuyết Minh HD)</h2>
+                
+                <div class="video-container">
+                    <video controls poster="https://via.placeholder.com/800x450?text=Poster+Phim+Hoat+Hinh">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ thẻ video HTML5.
+                    </video>
+                </div>
+                
+                <p class="video-description">
+                    <strong>Nội dung:</strong> Phim hoạt hình chọn lọc chất lượng cao, thuyết minh tiếng Việt chuẩn, không chứa quảng cáo gây phiền phức cho các bé khi theo dõi.
+                </p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Khối Player 2: Dùng thẻ <iframe> nhúng từ YouTube -->
+            <div class="player-wrapper">
+                <h2>Video Nổi Bật Bổ Sung (Nhúng YouTube iframe)</h2>
+                <div class="iframe-container">
+                    <iframe 
+                        src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- 3. FOOTER: THÔNG TIN BẢN QUYỀN -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Website Xem Phim Hoạt Hình Trẻ Em. Mọi quyền được bảo lưu.</p>
+        <p><small>Nội dung chọn lọc lành mạnh - Chất lượng HD/FullHD - Không quảng cáo</small></p>
+    </footer>
+
+</body>
+</html>
+
+
+
+/* =================================================================
+   1. RESET CSS BAN ĐẦU & CẤU HÌNH TRANG
+   ================================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    padding-top: 70px; /* Tránh cho Header cố định che mất nội dung bên trên */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =================================================================
+   2. HEADER CỐ ĐỊNH & THÀNH PHẦN (MỨC TRUNG BÌNH)
+   ================================================================= */
+.main-header {
+    position: fixed; /* Cố định Header khi cuộn trang */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #1a237e; /* Màu xanh indigo đậm chủ đạo */
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    height: 40px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+/* Thanh tìm kiếm & lọc */
+.search-bar {
+    display: flex;
+    gap: 8px;
+}
+
+.search-bar input, .search-bar select {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+/* Loại bỏ gạch chân & hiệu ứng rê chuột (Mức trung bình) */
+.head-link ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.head-link a {
+    color: #ffffff;
+    text-decoration: none; /* Bỏ gạch chân */
+    font-size: 0.95rem;
+    transition: all 0.2s ease-in-out;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* Khi rê chuột vào liên kết: Bôi đậm và đổi màu chữ */
+.head-link a:hover,
+.head-link a.active {
+    font-weight: bold;      /* Bôi đậm */
+    color: #ffeb3b;         /* Đổi sang màu vàng nổi bật */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =================================================================
+   3. BỐ CỤC NỘI DUNG CHÍNH (PAGE CONTAINER)
+   ================================================================= */
+.page-container {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+/* LEFT CONTENT: Menu danh sách video */
+.left-content {
+    width: 320px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.left-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #1a237e;
+    border-bottom: 2px solid #e8eaf6;
+    padding-bottom: 8px;
+}
+
+.video-menu {
+    list-style: none;
+}
+
+.video-menu li {
+    margin-bottom: 10px;
+}
+
+.video-menu a {
+    display: flex;
+    gap: 10px;
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #333;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.video-menu li.active a,
+.video-menu a:hover {
+    background-color: #e8eaf6;
+    color: #1a237e;
+    font-weight: bold; /* Bôi đậm liên kết khi hover/active */
+}
+
+.video-menu img {
+    width: 80px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.video-info span {
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.video-info small {
+    font-size: 0.75rem;
+    color: #2e7d32; /* Màu xanh thể hiện chất lượng HD */
+    font-weight: normal;
+}
+
+/* RIGHT CONTENT: Khu vực xem video */
+.right-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.player-wrapper h2 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: #0d47a1;
+}
+
+.video-container, .iframe-container {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Đảm bảo thẻ <video> hiển thị chuẩn responsive */
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Đảm bảo <iframe> YouTube tỉ lệ chuẩn 16:9 responsive */
+.iframe-container {
+    padding-top: 56.25%; /* Tỉ lệ 16:9 */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-description {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.divider {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* =================================================================
+   4. FOOTER
+   ================================================================= */
+.main-footer {
+    background-color: #1a237e;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+.main-footer p {
+    margin: 4px 0;
+}
+
+/* =================================================================
+   5. RESPONSIVE DESIGN (MỨC NÂNG CAO - PC, TABLET, MOBILE)
+   ================================================================= */
+/* Tablet (Dưới 992px) */
+@media (max-width: 992px) {
+    .page-container {
+        flex-direction: column; /* Chuyển thành 1 cột */
+    }
+
+    .left-content {
+        width: 100%; /* Menu chuyển xuống dạng hàng full width */
+    }
+
+    .video-menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Đổi menu thành 2 cột */
+        gap: 10px;
+    }
+}
+
+/* Mobile (Dưới 600px) */
+@media (max-width: 600px) {
+    body {
+        padding-top: 120px; /* Tăng padding để vừa Header co dãn */
+    }
+
+    .main-header {
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-bar input {
+        flex: 1;
+    }
+
+    .head-link ul {
+        gap: 10px;
+    }
+
+    .head-link a {
+        font-size: 0.85rem;
+        padding: 4px 6px;
+    }
+
+    .video-menu {
+        grid-template-columns: 1fr; /* Menu chuyển về 1 cột trên điện thoại nhỏ */
+    }
+}
