@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Exercise - Blue Theme</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <style>
+        /* ==============================
+           BLUE MONOCHROMATIC COLOR TABLE
+           Base color: #00ADEE (level 1)
+        =============================== */
+
+        :root {
+            /* Monochromatic blue palette - from level 1 (darkest) to level 9 (lightest) */
+            --color-level-1: #00ADEE;  /* Base / primary */
+            --color-level-2: #00B2EF;  /* Slightly lighter */
+            --color-level-3: #00B7F0;  /* Interpolated */
+            --color-level-4: #00BFF2;  /* Main background */
+            --color-level-5: #44CDF3;  /* Interpolated */
+            --color-level-6: #6AE5F5;  /* Interpolated */
+            --color-level-7: #8DD7F7;  /* Content section */
+            --color-level-8: #AAE0FA;  /* Interpolated */
+            --color-level-9: #C6E9FA;  /* Footer */
+        }
+
+        /* ===== BƯỚC 2: Màu nền chính ===== */
+        /* Background becomes level 4 (#00BFF2) */
+        body {
+            background-color: var(--color-level-4);
+        }
+
+        /* ===== BƯỚC 6: Màu chữ toàn trang ===== */
+        /* Keep all text black */
+        body, .content-section, .sale-section, .footer-section {
+            color: black;
+        }
+
+        /* ===== Header with blue logo ===== */
+        .header {
+            background-color: white;
+            padding: 15px 0;
+            border-bottom: 2px solid var(--color-level-1);
+            margin-bottom: 30px;
+        }
+        .logo {
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+        }
+
+        /* ===== BƯỚC 3: Section ON SALE / PREVIEW ===== */
+        /* Background red changed to level 1 (#00ADEE) */
+        .sale-section {
+            background-color: var(--color-level-1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .sale-badge {
+            background-color: var(--color-level-1);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        /* ===== BƯỚC 4: Màu nền phần nội dung ===== */
+        /* Pink background changed to level 7 (#8DD7F7) */
+        .content-section {
+            background-color: var(--color-level-7);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        /* ===== Product cards ===== */
+        .product-card {
+            background-color: white;
+            border: 1px solid var(--color-level-9);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .product-card .badge-sale {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--color-level-2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .product-card .badge-preview {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--color-level-1);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        /* ===== BƯỚC 5: Màu nền phần footer ===== */
+        /* Footer background changed to level 9 (#C6E9FA) */
+        .footer-section {
+            background-color: var(--color-level-9);
+            padding: 30px 0;
+            border-top: 3px solid var(--color-level-1);
+        }
+        .footer-section h4 {
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--color-level-1);
+        }
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Section header */
+        .section-title {
+            color: var(--color-level-1);
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--color-level-2);
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header with blue logo -->
+<div class="header">
+    <div class="container">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" fill="#00ADEE"/>
+                <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">CG</text>
+            </svg>
+            <span style="margin-left: 15px; font-size: 24px; font-weight: bold; color: black;">CodeGym Store</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ===== BƯỚC 3: Phần ON SALE / PREVIEW ===== -->
+    <div class="sale-section">
+        <h2><span class="sale-badge">ON SALE</span> - Special Offers</h2>
+        <p>Limited time promotions on selected products.</p>
+    </div>
+
+    <!-- Product list -->
+    <div class="section-title">Featured Products</div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-card">
+                <span class="badge-sale">SALE</span>
+                <h4>Product A</h4>
+                <p class="text-dark">Description of Product A. High quality and durable.</p>
+                <p class="text-dark"><strong>$99.99</strong> <span class="text-muted text-decoration-line-through">$129.99</span></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <span class="badge-preview">PREVIEW</span>
+                <h4>Product B</h4>
+                <p class="text-dark">New arrival! Description of Product B.</p>
+                <p class="text-dark"><strong>$149.99</strong></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <span class="badge-sale">SALE</span>
+                <h4>Product C</h4>
+                <p class="text-dark">Popular item. Description of Product C.</p>
+                <p class="text-dark"><strong>$59.99</strong> <span class="text-muted text-decoration-line-through">$79.99</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== BƯỚC 4: Phần nội dung ===== -->
+    <div class="content-section">
+        <h2>About This Store</h2>
+        <p>This is a demo page created for the CodeGym color palette exercise. The monochromatic blue color scheme (based on #00ADEE) is applied to all major sections:</p>
+        <ul class="text-dark">
+            <li><strong>Background:</strong> Level 4 - #00BFF2</li>
+            <li><strong>ON SALE/PREVIEW section:</strong> Level 1 - #00ADEE</li>
+            <li><strong>Content section:</strong> Level 7 - #8DD7F7</li>
+            <li><strong>Footer:</strong> Level 9 - #C6E9FA</li>
+            <li><strong>Text color:</strong> Black throughout</li>
+        </ul>
+        <div class="section-title">Color Palette Reference</div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Level</th>
+                            <th>Hex Code</th>
+                            <th>Preview</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 (Primary)</td>
+                            <td>#00ADEE</td>
+                            <td style="background-color:#00ADEE;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>#00B2EF</td>
+                            <td style="background-color:#00B2EF;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>#00BFF2</td>
+                            <td style="background-color:#00BFF2;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>#8DD7F7</td>
+                            <td style="background-color:#8DD7F7;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>#C6E9FA</td>
+                            <td style="background-color:#C6E9FA;">&nbsp;</td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===== BƯỚC 5: Phần footer ===== -->
+<div class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>CodeGym Store</h4>
+                <p class="text-dark">© 2024 CodeGym. All rights reserved.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Quick Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-dark">Home</a></li>
+                    <li><a href="#" class="text-dark">Products</a></li>
+                    <li><a href="#" class="text-dark">About</a></li>
+                    <li><a href="#" class="text-dark">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Contact</h4>
+                <p class="text-dark">Email: contact@codegym.vn</p>
+                <p class="text-dark">Phone: 0123 456 789</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
