@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Hợp Công Ty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #1a252f;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        th {
+            background-color: #0d6efd;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Căn trái cột Nội dung cuộc họp để dễ đọc */
+        td.content {
+            text-align: left;
+        }
+
+        /* Tạo đường kẻ phân biệt các hàng */
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Highlight cuộc họp kéo dài cả buổi */
+        .long-meeting {
+            background-color: #e7f1ff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lịch họp công ty</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ngày</th>
+                <th>Giờ</th>
+                <th>Nội dung cuộc họp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Ngày Thứ Hai: 2 cuộc họp -> Dùng rowspan="2" ở cột Ngày -->
+            <tr>
+                <td rowspan="2"><b>Thứ Hai</b><br>(12/10)</td>
+                <td>08:30 - 10:00</td>
+                <td class="content">Họp giao ban đầu tuần các Trưởng bộ phận</td>
+            </tr>
+            <tr>
+                <!-- Hàng này đã được rowspan chiếm cột Ngày, chỉ cần điền Giờ và Nội dung -->
+                <td>14:00 - 16:00</td>
+                <td class="content">Đánh giá tiến độ dự án Website tháng 10</td>
+            </tr>
+
+            <!-- Ngày Thứ Ba: 1 cuộc họp kéo dài cả buổi -> Dùng colspan="2" cho Giờ + Nội dung -->
+            <tr>
+                <td><b>Thứ Ba</b><br>(13/10)</td>
+                <td colspan="2" class="long-meeting">
+                    <b>08:00 - 17:00:</b> Tập huấn quy trình an toàn thông tin (Cả ngày)
+                </td>
+            </tr>
+
+            <!-- Ngày Thứ Tư: 2 cuộc họp -> Dùng rowspan="2" ở cột Ngày -->
+            <tr>
+                <td rowspan="2"><b>Thứ Tư</b><br>(14/10)</td>
+                <td>09:00 - 11:00</td>
+                <td class="content">Gặp gỡ đối tác chiến lược v/v Ký kết hợp đồng</td>
+            </tr>
+            <tr>
+                <td>15:30 - 17:00</td>
+                <td class="content">Họp Nội bộ Team Dev & QA</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
