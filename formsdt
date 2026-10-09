@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký Người Dùng</title>
+    <style>
+        /* CSS căn chỉnh giao diện Form đơn giản, dễ nhìn */
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #cbd5e1;
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .registration-card {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label.group-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding-top: 4px;
+        }
+
+        .gender-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .gender-item input[type="radio"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-card">
+        <h2>Đăng Ký Người Dùng</h2>
+
+        <!-- Khai báo action và method POST theo yêu cầu -->
+        <form action="http://demo.codegym.vn/6/registration_form/register.php" method="POST">
+            
+            <!-- 1. Trường Họ và tên (name="name") -->
+            <div class="form-group">
+                <label for="name" class="group-label">Họ và tên</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Nhập họ và tên..." required>
+            </div>
+
+            <!-- 2. Trường Email (name="email") -->
+            <div class="form-group">
+                <label for="email" class="group-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="example@domain.com" required>
+            </div>
+
+            <!-- 3. Trường Số điện thoại (name="phone") -->
+            <div class="form-group">
+                <label for="phone" class="group-label">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="0901234567" required>
+            </div>
+
+            <!-- 4. Trường Giới tính (name="gender") -->
+            <div class="form-group">
+                <label class="group-label">Giới tính</label>
+                <div class="gender-options">
+                    <label class="gender-item">
+                        <input type="radio" name="gender" value="male" checked> Nam
+                    </label>
+                    <label class="gender-item">
+                        <input type="radio" name="gender" value="female"> Nữ
+                    </label>
+                    <label class="gender-item">
+                        <input type="radio" name="gender" value="other"> Khác
+                    </label>
+                </div>
+            </div>
+
+            <!-- Nút gửi form -->
+            <button type="submit" class="btn-submit">Đăng ký</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
