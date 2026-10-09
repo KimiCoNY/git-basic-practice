@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Survey</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #000;
+            margin: 20px 40px;
+            background-color: #fff;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label.question {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select {
+            padding: 2px;
+            width: 500px;
+            border: 1px solid #7a7a7a;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .other-input {
+            margin-top: 4px;
+            margin-left: 20px;
+            width: 80px;
+            border: 1px solid #7a7a7a;
+        }
+
+        /* Khối Highlight màu vàng nhẹ */
+        .highlight-box {
+            background-color: #fffde6;
+            padding: 12px 10px;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        /* Phần nhập tiền $ Dollars . Cents */
+        .currency-input {
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        .currency-field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .currency-field input {
+            border: 1px solid #7a7a7a;
+            padding: 2px;
+        }
+
+        .currency-field span {
+            font-size: 10px;
+            color: #555;
+            margin-top: 2px;
+        }
+
+        /* Textarea mở rộng */
+        textarea {
+            width: 100%;
+            height: 120px;
+            border: 1px solid #7a7a7a;
+        }
+
+        /* Bảng đánh giá Mức độ đồng ý */
+        .rating-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #e8e8e8;
+        }
+
+        .rating-table th {
+            font-weight: bold;
+            font-size: 11px;
+            padding: 8px;
+            text-align: center;
+            border-left: 1px solid #ccc;
+        }
+
+        .rating-table th:first-child {
+            border-left: none;
+            width: 40%;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .footer-logo strong {
+            color: #d12a2a;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Market Research Survey</h1>
+    <div class="subtitle">Please take a few moments to complete this satisfaction survey.</div>
+
+    <form action="#" method="POST">
+        <!-- Q1: Age Range -->
+        <div class="form-group">
+            <label class="question" for="age">What is your age range?</label>
+            <select id="age" name="age">
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-44">35-44</option>
+                <option value="45+">45+</option>
+            </select>
+        </div>
+
+        <!-- Q2: Yearly Income -->
+        <div class="form-group">
+            <label class="question" for="income">What is your yearly income range?</label>
+            <select id="income" name="income">
+                <option value="0-25000">$0 - $25,000</option>
+                <option value="25001-50000">$25,001 - $50,000</option>
+                <option value="50001-75000">$50,001 - $75,000</option>
+                <option value="75000+">$75,000+</option>
+            </select>
+        </div>
+
+        <!-- Q3: Gender Identity -->
+        <div class="form-group">
+            <label class="question">Gender Identity</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="nonbinary"> Nonbinary</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+            <input type="text" name="gender_other" class="other-input">
+        </div>
+
+        <!-- Q4: Products Purchased (Highlighted) -->
+        <div class="form-group highlight-box">
+            <label class="question">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="product" value="1"> Product 1</label>
+                <label><input type="checkbox" name="product" value="2"> Product 2</label>
+                <label><input type="checkbox" name="product" value="3"> Product 3</label>
+            </div>
+        </div>
+
+        <!-- Q5: Usage Frequency -->
+        <div class="form-group">
+            <label class="question">How often would you use our new product?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="frequency" value="daily"> Daily</label>
+                <label><input type="radio" name="frequency" value="weekly"> Weekly</label>
+                <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
+            </div>
+        </div>
+
+        <!-- Q6: Price Willing to Pay -->
+        <div class="form-group">
+            <label class="question">What would you pay for the new product?</label>
+            <div class="currency-input">
+                <span style="margin-top: 2px;">$</span>
+                <div class="currency-field">
+                    <input type="text" name="dollars" style="width: 45px;">
+                    <span>Dollars</span>
+                </div>
+                <span style="margin-top: 2px;">.</span>
+                <div class="currency-field">
+                    <input type="text" name="cents" style="width: 25px;">
+                    <span>Cents</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q7: Features Textarea -->
+        <div class="form-group">
+            <label class="question" for="features">What features would you like to see in the new product.</label>
+            <textarea id="features" name="features"></textarea>
+        </div>
+
+        <!-- Q8: Agreement Table -->
+        <div class="form-group">
+            <label class="question" style="font-weight: normal;">Please rate your level of agreement with the following statements.</label>
+            <table class="rating-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Strongly Disagree</th>
+                        <th>Disagree</th>
+                        <th>Agree</th>
+                        <th>Strongly Agree</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-logo">
+            Powered by <strong>WuFoo</strong><br>
+            <span style="font-size: 9px; color: #888;">by SurveyMonkey</span>
+        </div>
+    </form>
+
+</body>
+</html>
