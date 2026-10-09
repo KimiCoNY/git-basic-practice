@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực Hành CSS Box Model 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        /* Khối Demo Box Model theo bài thực hành */
+        .box-demo {
+            margin: 25px;
+            padding: 35px;
+            width: 200px;
+            background-color: lightseagreen;
+            border: 20px dashed indianred;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Khối giải thích chi tiết */
+        .explanation {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .formula {
+            background-color: #eef2f5;
+            padding: 10px 15px;
+            border-left: 4px solid lightseagreen;
+            font-family: monospace;
+            font-size: 0.95rem;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Demo CSS Box Model 1</h2>
+
+    <!-- Phần tử div thực hành -->
+    <div class="box-demo">
+        Content demo box<br/>
+    </div>
+
+    <!-- Giải thích chi tiết tính toán -->
+    <div class="explanation">
+        <h3>📊 Công thức tính tổng chiều rộng chiếm dụng (Total Space Width):</h3>
+        <p>Mặc định trong CSS (`box-sizing: content-box`), tổng chiều rộng của khối trên màn hình bao gồm:</p>
+        
+        <div class="formula">
+            Tổng chiều rộng = width + padding (trái + phải) + border (trái + phải) + margin (trái + phải)
+        </div>
+
+        <ul>
+            <li><strong>Width (Nội dung):</strong> 200px</li>
+            <li><strong>Padding (Đệm trong):</strong> 35px + 35px = 70px</li>
+            <li><strong>Border (Viền):</strong> 20px + 20px = 40px</li>
+            <li><strong>Margin (Lề ngoài):</strong> 25px + 25px = 50px</li>
+        </ul>
+
+        <p><strong>➡️ Tổng không gian chiếm dụng:</strong> <code>200 + 70 + 40 + 50 = 360px</code></p>
+    </div>
+
+</body>
+</html>
