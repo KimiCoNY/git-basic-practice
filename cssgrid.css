@@ -1,0 +1,63 @@
+/* Reset CSS cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Định dạng chung cho các khối để dễ quan sát */
+.grid-container > * {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.header { background-color: #e74c3c; grid-area: header; }
+.nav { background-color: #3498db; grid-area: nav; }
+.main { background-color: #2ecc71; grid-area: main; min-height: 200px; }
+.sidebar { background-color: #f1c40f; grid-area: sidebar; }
+.footer { background-color: #34495e; grid-area: footer; }
+
+/* -------------------------------------------
+   BỐ CỤC MOBILE (Mặc định - Mobile First)
+   Sắp xếp dọc các phần tử
+---------------------------------------------*/
+.grid-container {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    
+    /* Mặc định trên Mobile chỉ có 1 cột */
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "sidebar"
+        "footer";
+}
+
+/* -------------------------------------------
+   BỐ CỤC DESKTOP (Màn hình >= 768px)
+---------------------------------------------*/
+@media (min-width: 768px) {
+    .grid-container {
+        /* Chia thành 3 cột: 200px cho Nav, 250px cho Sidebar, Main dùng phần còn lại */
+        grid-template-columns: 200px 1fr 250px;
+        grid-template-rows: auto 1fr auto;
+        
+        /* Phân bổ các vùng Grid (Areas) */
+        grid-template-areas: 
+            "header header header"
+            "nav main sidebar"
+            "footer footer footer";
+        
+        height: 100vh; /* Kéo dài bằng chiều cao màn hình trên Desktop */
+    }
+}
