@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple iPhone - Giới thiệu sản phẩm</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome cho Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Một chút CSS để làm mịn giao diện, tuân thủ hạn chế tối đa viết CSS mới */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .product-nav-icon {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .hero-banner {
+            background-color: #fbfbfd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Thanh điều hướng toàn cục (Global Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 shadow-sm">
+        <div class="container d-flex justify-content-center">
+            <ul class="navbar-nav d-flex flex-row gap-4 align-items-center flex-wrap">
+                <li class="nav-item"><a class="nav-link text-dark" href="#"><i class="fa-brands fa-apple fs-4"></i></a></li>
+                <li class="nav-item"><a class="nav-link small text-dark" href="#">Store</a></li>
+                <li class="nav-item"><a class="nav-link small text-dark" href="#">Mac</a></li>
+                <li class="nav-item"><a class="nav-link small text-dark" href="#">iPad</a></li>
+                <li class="nav-item"><a class="nav-link small text-dark fw-bold" href="#">iPhone</a></li>
+                <li class="nav-item"><a class="nav-link small text-dark" href="#">Watch</a></li>
+                <li class="nav-item"><a class="nav-link small text-dark" href="#">Vision</a></li>
+                <li class="nav-item"><a class="nav-link small text-dark" href="#">AirPods</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tiêu đề trang -->
+    <div class="container text-center mt-5 mb-4">
+        <h1 class="display-3 fw-bold">iPhone</h1>
+    </div>
+
+    <!-- 2. Danh mục sản phẩm (Sử dụng Flexbox) -->
+    <div class="container mb-5">
+        <!-- Flexbox container: d-flex, justify-content-center, gap-4 -->
+        <div class="d-flex justify-content-center flex-wrap gap-4 text-center">
+            
+            <!-- Item 1 -->
+            <div class="d-flex flex-column align-items-center" style="cursor: pointer;">
+                <i class="fa-solid fa-mobile-screen product-nav-icon"></i>
+                <span class="small fw-semibold">iPhone Duo</span>
+                <span class="text-danger small" style="font-size: 0.7rem;">New</span>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="d-flex flex-column align-items-center" style="cursor: pointer;">
+                <i class="fa-solid fa-mobile-button product-nav-icon"></i>
+                <span class="small fw-semibold">iPhone 16 Pro</span>
+                <span class="text-danger small" style="font-size: 0.7rem;">New</span>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="d-flex flex-column align-items-center" style="cursor: pointer;">
+                <i class="fa-solid fa-mobile product-nav-icon"></i>
+                <span class="small fw-semibold">iPhone Air</span>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="d-flex flex-column align-items-center" style="cursor: pointer;">
+                <i class="fa-solid fa-mobile-screen product-nav-icon"></i>
+                <span class="small fw-semibold">iPhone 17</span>
+            </div>
+            
+            <!-- Item 5 -->
+            <div class="d-flex flex-column align-items-center" style="cursor: pointer;">
+                <i class="fa-solid fa-arrows-rotate product-nav-icon"></i>
+                <span class="small fw-semibold">Compare</span>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="d-flex flex-column align-items-center" style="cursor: pointer;">
+                <i class="fa-solid fa-headphones product-nav-icon"></i>
+                <span class="small fw-semibold">Accessories</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3. Khu vực Hero (Giới thiệu iPhone Duo) -->
+    <div class="container mb-5">
+        <div class="hero-banner rounded-4 text-center pt-5 px-3 px-md-5 overflow-hidden shadow-sm position-relative">
+            
+            <!-- Nội dung văn bản và Nút bấm: Sử dụng Flexbox để dàn trang -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 px-md-5">
+                <div class="text-start">
+                    <h2 class="display-4 fw-bold mb-0">iPhone Duo</h2>
+                    <p class="fs-4 text-muted">Hello, hello.</p>
+                </div>
+                
+                <div class="d-flex gap-3 align-items-center mt-3 mt-md-0">
+                    <a href="#" class="btn btn-primary rounded-pill px-4 py-2">Learn more</a>
+                    <a href="#" class="text-decoration-none fw-semibold">View pricing <i class="fa-solid fa-chevron-right fs-6"></i></a>
+                </div>
+            </div>
+
+            <!-- Hình ảnh sản phẩm mockup -->
+            <div class="mt-4">
+                <img src="https://picsum.photos/800/400?random=4" class="img-fluid rounded-top-4 shadow-sm" alt="iPhone Duo" style="max-height: 400px; width: 100%; object-fit: cover; object-position: top;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
